@@ -1,50 +1,49 @@
 <template>
-    <div class="form-container">
-        <div class="form-group">
-            <label for="campoUsuario">Usuario:</label>
-            <input type="text" id="campoUsuario" v-model="campoUsuario" class="form-control"
-                placeholder="Ingrese su usuario" />
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+      <h3 class="text-center mb-4">Iniciar Sesión</h3>
+      <form @submit.prevent="onSubmit">
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            v-model="email"
+            required
+          />
         </div>
-        <div class="form-group">
-            <label for="campoContrasena">Contraseña:</label>
-            <input type="password" id="campoContrasena" v-model="campoContrasena" class="form-control"
-                placeholder="Ingrese su contraseña" />
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            v-model="password"
+            required
+          />
         </div>
-        <div class="form-group">
-            <input type="button" id="campoContrasena" v-model="botonIniciarSesion" class="form-control-button"
-                value="Iniciar Sesión" />
-        </div>
+        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+      </form>
     </div>
+  </div>
 </template>
 
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const email = ref<string>('');
+const password = ref<string>('');
+
+const onSubmit = () => {
+  // Aquí puedes manejar el inicio de sesión
+  console.log('Correo Electrónico:', email.value);
+  console.log('Contraseña:', password.value);
+};
+</script>
+
 <style scoped>
-/* .login-form {
-  display: block;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-} */
-
-.form-group {
-  display: block;
-  margin-bottom: 16px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-top: 4px;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: #007bff;
+.vh-100 {
+  min-height: 100vh;
 }
 </style>
