@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="RedStone Logo" src="../assets/LogoRedStone.png">
+    <img id="logo" alt="RedStone Logo" src="../assets/LogoRedStone.png">
     <HelloWorld msg="Bienvenido a RedStone"/>
   </div>
 </template>
@@ -16,3 +16,20 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.home {
+    background-color: black;
+    height: 100vh; /* Para asegurar que cubra toda la vista */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+</style>
