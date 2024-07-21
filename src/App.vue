@@ -5,9 +5,6 @@
   </nav>
   <router-view/>
 </template>
-<script lang="ts" setup>
-  import campos_login from './campos_login.vue';
-</script>
 
 <style>
 #app {
