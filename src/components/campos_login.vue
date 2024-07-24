@@ -1,4 +1,5 @@
 <template>
+  
   <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
       <h3 class="text-center mb-4">Iniciar Sesión</h3>
@@ -27,10 +28,14 @@
       </form>
     </div>
   </div>
+
 </template>
 
 <script lang="ts" setup>
+
 import { ref } from 'vue';
+
+
 
 const email = ref<string>('');
 const password = ref<string>('');

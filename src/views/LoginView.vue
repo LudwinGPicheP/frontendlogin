@@ -1,9 +1,12 @@
 <template>
-    <h1>Login</h1>
-    <campos_login/>
+    <MainLayout>
+      <campos_login/>
+    </MainLayout>
+    
 </template>
 
 <script lang="ts" setup>
+import MainLayout from '@/layouts/MainLayout.vue';
   import campos_login from '../components/campos_login.vue';
 </script>
 
